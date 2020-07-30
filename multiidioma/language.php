@@ -9,7 +9,7 @@ $array_idiomas = ['es', 'ca'];
 	//print_r($_SERVER);
 	//echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 	$idioma_nav = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-	echo $idioma_nav;
+	//echo $idioma_nav;
 	//verifica que el idioma del navegador es permitido
 	if(in_array($idioma_nav, $array_idiomas)){
 		$idioma = $idioma_nav;
