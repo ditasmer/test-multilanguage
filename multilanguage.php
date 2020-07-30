@@ -7,7 +7,8 @@ $array_idiomas = ['es', 'ca'];
 	$idioma = 'es';
 
 	//comprobar si existe cookie de idioma
-	if(isset($_COOKIE['idioma'])){
+	//&& que es un idioma permitido
+	if(isset($_COOKIE['idioma']) && (in_array($_COOKIE['idioma'], $array_idiomas))){
 			$idioma = $_COOKIE['idioma'];
 	}
 
