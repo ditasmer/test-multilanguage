@@ -6,6 +6,16 @@ $array_idiomas = ['es', 'ca'];
 	//definir un idioma por defecto
 	$idioma = 'es';
 
+	//idioma por navegador
+	//print_r($_SERVER);
+	//echo $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+	$idioma_nav = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+	echo $idioma_nav;
+	//verifica que el idioma del navegador es permitido
+	if(in_array($idioma_nav, $array_idiomas)){
+		$idioma = $idioma_nav;
+	}
+
 	//comprobar si existe cookie de idioma
 	//&& que es un idioma permitido
 	if(isset($_COOKIE['idioma']) && (in_array($_COOKIE['idioma'], $array_idiomas))){
@@ -24,6 +34,7 @@ $array_idiomas = ['es', 'ca'];
 		}
 		
 	}
+
 	//include de idioma seleccionado entre ""
 	include("multiidioma/contenido_$idioma.php");
 ?>
