@@ -59,7 +59,7 @@ require('multiidioma/language.php');
 			let comentario_usuario = document.querySelector('#comentarios').value.trim()
 
 			if(comentario_usuario == ''){
-				alert('comentario obligatorio');
+				alert('<?=$error;?>');
 				return;
 			}
 			alert('ok');
