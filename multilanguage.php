@@ -1,6 +1,15 @@
 <!--DOCUMENTO 1 con el section del Doc1-->
 <?php
-	include('multiidioma/contenido_es.php');
+	//definir un idioma por defecto
+	$idioma = 'es';
+
+	//definir el idioma por seleccion del usuario
+	//peticiones que llegan por URL son GET SIEMPRE
+	if(isset($_GET['idioma'])){
+		$idioma = $_GET['idioma'];
+	}
+	//include de idioma seleccionado entre ""
+	include("multiidioma/contenido_$idioma.php");
 ?>
 
 <html>
