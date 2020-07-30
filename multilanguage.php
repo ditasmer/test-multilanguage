@@ -6,6 +6,11 @@ $array_idiomas = ['es', 'ca'];
 	//definir un idioma por defecto
 	$idioma = 'es';
 
+	//comprobar si existe cookie de idioma
+	if(isset($_COOKIE['idioma'])){
+			$idioma = $_COOKIE['idioma'];
+	}
+
 	//definir el idioma por seleccion del usuario
 	//peticiones que llegan por URL son GET SIEMPRE
 	if(isset($_GET['idioma'])){
@@ -13,6 +18,8 @@ $array_idiomas = ['es', 'ca'];
 		//busca contenido "x" en array escalar 
 		if(in_array($_GET['idioma'], $array_idiomas)){
 			$idioma = $_GET['idioma'];	
+			//guarda idioma en cookie, podemos consultarlo por Dev tools/Aplication/cookies
+			setcookie('idioma', $idioma, time()+3600*24*30*12, '/');
 		}
 		
 	}
