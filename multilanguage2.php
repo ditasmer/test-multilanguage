@@ -53,6 +53,18 @@ require('multiidioma/language.php');
 			padding: 20px;
 		}
 	</style>
+	<script type="text/javascript">
+		function validar(){
+			//recoge comentarios sin espacios por delante y detrás
+			let comentario_usuario = document.querySelector('#comentarios').value.trim()
+
+			if(comentario_usuario == ''){
+				alert('comentario obligatorio');
+				return;
+			}
+			alert('ok');
+		}
+	</script>
 </head>
 <body>
 	
@@ -66,7 +78,10 @@ require('multiidioma/language.php');
 	<section><h2><?=$titulo_form;?></h2>
 		<label><?=$label;?></label>
 		<br><br>
-	<textarea></textarea>
+	<textarea id='comentarios'></textarea>
+	<br>
+	<!-- simulamos que si fuera un formulario real valide contenido-->
+	<input type='button' onclick='validar()' value='Enviar'></input>
 	</section>
 
 		
