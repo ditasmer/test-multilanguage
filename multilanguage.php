@@ -18,6 +18,9 @@
 			margin: auto;
 			box-sizing:border-box;
 		}
+		header {
+			height: 120px;
+		}
 		nav {
 			width: 800px;
 			height: 40px;
@@ -29,7 +32,7 @@
 			padding-top:5px;
 			box-sizing:border-box; 
 		}
-		a {
+		nav a {
 			display: inline-block;
 			width: 100px;
 			height: 20px;
