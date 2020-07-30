@@ -53,18 +53,12 @@ require('multiidioma/language.php');
 			padding: 20px;
 		}
 	</style>
-	<script type="text/javascript">
-		function validar(){
-			//recoge comentarios sin espacios por delante y detrás
-			let comentario_usuario = document.querySelector('#comentarios').value.trim()
 
-			if(comentario_usuario == ''){
-				alert('<?=$error;?>');
-				return;
-			}
-			alert('ok');
-		}
+	<!--Formulario valida comentarios en dir JS externo-->
+	<script type="text/javascript">
+		var error = '<?=$error;?>';
 	</script>
+	<script type="text/javascript" src="js/language.js"></script>
 </head>
 <body>
 	
